@@ -1,5 +1,5 @@
 {
-  "name": "angular11-sample-app",
+  "name": "tracing_app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
