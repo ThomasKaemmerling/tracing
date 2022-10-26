@@ -26,7 +26,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     auth: {
       clientId: '1c18c530-a3e6-45e1-b4a4-048e8c1dc29c',
       authority: 'https://login.microsoftonline.com/2f43cada-2278-4a4a-a4f0-7113f1efb714',
-      redirectUri: 'http://localhost:4200/'
+      redirectUri: 'https://thankful-ground-0a88cdc10.2.azurestaticapps.net/'
     },
     cache: {
       cacheLocation: BrowserCacheLocation.LocalStorage,
