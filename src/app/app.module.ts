@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { IPublicClientApplication, PublicClientApplication, InteractionType, BrowserCacheLocation, LogLevel } from '@azure/msal-browser';
 import { MsalGuard, MsalInterceptor, MsalBroadcastService, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalGuardConfiguration, MsalRedirectComponent } from '@azure/msal-angular';
+import { ReportComponent } from './report/report.component';
+import { environment } from 'src/environments/environment';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -26,7 +28,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     auth: {
       clientId: '1c18c530-a3e6-45e1-b4a4-048e8c1dc29c',
       authority: 'https://login.microsoftonline.com/2f43cada-2278-4a4a-a4f0-7113f1efb714',
-      redirectUri: 'https://thankful-ground-0a88cdc10.2.azurestaticapps.net/'
+      redirectUri: environment.app_url
     },
     cache: {
       cacheLocation: BrowserCacheLocation.LocalStorage,
@@ -53,7 +55,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
 }
 
 export function MSALGuardConfigFactory(): MsalGuardConfiguration {
-  return { 
+  return {
     interactionType: InteractionType.Redirect,
     authRequest: {
       scopes: ['user.read']
@@ -65,8 +67,9 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent
-  ],
+    ProfileComponent,
+      ReportComponent
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

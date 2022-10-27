@@ -1,3 +1,4 @@
+import { ReportComponent } from './report/report.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
@@ -12,6 +13,12 @@ const routes: Routes = [
       MsalGuard
     ]
   },
+  {
+    path: 'report',
+    component: ReportComponent,
+    canActivate: [
+      MsalGuard
+  ]},
   {
     // Needed for hash routing
     path: 'code',
