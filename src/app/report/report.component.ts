@@ -22,7 +22,7 @@ export class ReportComponent implements OnInit {
     for(const prop in quotes){
       this.data.datasets.push({label:prop,data:[Number((quotes as any)[prop])]})
     }
-    alert(JSON.stringify(this.data))
+
   }
 
 }
