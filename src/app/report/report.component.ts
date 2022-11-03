@@ -1,3 +1,4 @@
+import { DataService } from './../services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportComponent implements OnInit {
 
-  constructor() { }
+  data: any;
 
-  ngOnInit() {
+  constructor(private dataService:DataService) {
+  }
+
+  async ngOnInit() {
+    const quotes = await this.dataService.receiveMachineQuotes();
+    this.data = {
+      labels:['Quote OK Parts'],
+      datasets:[]
+    }
+    for(const prop in quotes){
+      this.data.datasets.push({label:prop,data:[Number((quotes as any)[prop])]})
+    }
+    alert(JSON.stringify(this.data))
   }
 
 }
