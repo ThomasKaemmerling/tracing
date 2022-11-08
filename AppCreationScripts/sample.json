@@ -12,8 +12,8 @@
         "Id": "spa",
         "Name": "ms-identity-javascript-angular-spa",
         "Kind" :  "SinglePageApplication",
-        "HomePage": "http://localhost:4200/",
-        "ReplyUrls":"http://localhost:4200/",
+        "HomePage": "https://thankful-ground-0a88cdc10.2.azurestaticapps.net/",
+        "ReplyUrls":"https://thankful-ground-0a88cdc10.2.azurestaticapps.net/",
         "Audience": "AzureADandPersonalMicrosoftAccount",
         "RequiredResourcesAccess": [
           {
