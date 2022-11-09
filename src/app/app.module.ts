@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {ChartModule} from 'primeng/chart';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { IPublicClientApplication, PublicClientApplication, InteractionType, BrowserCacheLocation, LogLevel } from '@azure/msal-browser';
-import { MsalGuard, MsalInterceptor, MsalBroadcastService, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalGuardConfiguration, MsalRedirectComponent } from '@azure/msal-angular';
+import { MsalGuard, MsalInterceptor, MsalBroadcastService, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalGuardConfiguration, MsalRedirectComponent, ProtectedResourceScopes } from '@azure/msal-angular';
 import { ReportComponent } from './report/report.component';
 import { environment } from 'src/environments/environment';
 
@@ -45,8 +45,12 @@ export function MSALInstanceFactory(): IPublicClientApplication {
 }
 
 export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
-  const protectedResourceMap = new Map<string, Array<string>>();
-  protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
+  const protectedResourceMap:Map<string, Array<string | ProtectedResourceScopes>>=[
+    ['https://graph.microsoft.com/v1.0/me',['user.read']], // example
+    ['https://tracedatareceiver20221103164225.azurewebsites.net',['api://3f97233e-43b4-4dfc-8bb8-b54a10877cd9/data.read']], // api you host
+
+];;
+  protectedResourceMap.set([,, [,]]);
 
   return {
     interactionType: InteractionType.Redirect,
