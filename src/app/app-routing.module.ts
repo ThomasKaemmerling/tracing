@@ -38,7 +38,7 @@ const routes: Routes = [
 const isIframe = window !== window.parent && !window.opener;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
