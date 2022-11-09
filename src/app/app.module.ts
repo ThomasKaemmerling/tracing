@@ -49,8 +49,8 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
     ['https://graph.microsoft.com/v1.0/me',['user.read']], // example
     ['https://tracedatareceiver20221103164225.azurewebsites.net',['api://3f97233e-43b4-4dfc-8bb8-b54a10877cd9/data.read']], // api you host
 
-];;
-  protectedResourceMap.set([,, [,]]);
+];
+
 
   return {
     interactionType: InteractionType.Redirect,
