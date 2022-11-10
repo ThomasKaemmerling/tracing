@@ -49,7 +49,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   const protectedResourceMap = new Map<string, Array<string>>();
   protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
   protectedResourceMap.set('https://tracedatareceiver20221103164225.azurewebsites.net', ['api://3f97233e-43b4-4dfc-8bb8-b54a10877cd9/user.read']);
-  protectedResourceMap.set('https://tracedatareceiver20221103164225.azurewebsites.net', ['api://3f97233e-43b4-4dfc-8bb8-b54a10877cd9/user_impersonation']);
+  //protectedResourceMap.set('https://tracedatareceiver20221103164225.azurewebsites.net', ['api://3f97233e-43b4-4dfc-8bb8-b54a10877cd9/user_impersonation']);
 
 
   return {
